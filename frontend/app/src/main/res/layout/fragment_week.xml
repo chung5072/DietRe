@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_week"
+    style="@style/DietRe_BaseLayout"
+    android:background="@color/resolve_back"
+    tools:context=".ui.week.WeekFragment">
+    <!--이번 주 분석 제목-->
+    <TextView
+        style="@style/TextAppearance.DietRe.TitleLarge"
+        android:text="@string/title_week" />
+    <!--이번 주 분석 제목-->
+    <!--이번 주 분석 내용-->
+    <!--스크롤 뷰-->
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/layout_scroll"
+        style="@style/DietRe_ContentLayout"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/layout_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--주간 카테고리별 그래프-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/main"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:weightSum="10">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/title_date"
+                        style="@style/TextAppearance.DietRe.TitleLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="날짜"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="9"
+                    android:orientation="vertical"
+                    android:weightSum="9">
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/viewpager_week"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="9" />
+
+                    <me.relex.circleindicator.CircleIndicator3
+                        android:id="@+id/indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        app:ci_drawable="@drawable/shape_resolve_oval"
+                        app:ci_height="7dp"
+                        app:ci_margin="4dp"
+                        app:ci_width="7dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--주간 카테고리별 그래프-->
+            <!--일별 분석-->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.DietRe.BaseCardView"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout style="@style/DietRe_CardLayout">
+
+                    <TextView
+                        style="@style/TextAppearance.DietRe.TitleSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:text="@string/table_title" />
+
+                    <TableLayout
+                        android:id="@+id/table_week"
+                        style="@style/DietRe_ContentLayout"
+                        android:gravity="center"
+                        android:stretchColumns="*">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                style="@style/DietRe.TableTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="요일" />
+
+                            <TextView
+                                android:id="@+id/textView6"
+                                style="@style/DietRe.TableTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="칼로리(Kcal)" />
+
+                            <TextView
+                                android:id="@+id/textView5"
+                                style="@style/DietRe.TableTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="탄수화물(g)" />
+
+                            <TextView
+                                android:id="@+id/textView4"
+                                style="@style/DietRe.TableTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="단백질(g)" />
+
+                            <TextView
+                                android:id="@+id/textView2"
+                                style="@style/DietRe.TableTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="지방(g)" />
+                        </TableRow>
+
+                    </TableLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+            <!--일별 분석-->
+            <!--v-->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.DietRe.BaseCardView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginBottom="10dp"
+                android:weightSum="6">
+
+                <LinearLayout
+                    style="@style/DietRe_CardLayout"
+                    android:weightSum="5">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/text_score"
+                            style="@style/DietRe.Score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="점수" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.github.mikephil.charting.charts.HorizontalBarChart
+                            android:id="@+id/score_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center">
+
+                        </com.github.mikephil.charting.charts.HorizontalBarChart>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/text_percent"
+                            style="@style/DietRe.Percent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="상위 1%!"
+                            android:textAlignment="center" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <Button
+                android:id="@+id/btn_end"
+                style="@style/ShapeAppearance.DietRe.Button"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:text="확인완료" />
+            <!--최종 결과-->
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

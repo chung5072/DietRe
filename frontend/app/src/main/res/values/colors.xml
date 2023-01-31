@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="resolve">#bef1de</color>
+    <color name="recommend">#feee91</color>
+    <color name="resolve_back">#f4fffb</color>
+    <color name="recommend_back">#fffeee</color>
+    <color name="resolve_acc">#68ce8f</color>
+    <color name="recommend_acc">#ffd400</color>
+    <color name="main">#fafafa</color>
+    <color name="main_dark">#AAAAAA</color>
+    <color name="status">#CCE9FF</color>
+    <color name="textPrimary">#272727</color>
+    <color name="textGray">#323232</color>
+    <color name="back_gray">#CDC2C2C2</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="danger">#FF0000</color>
+    <color name="carbo">#B5F6AA</color>
+    <color name="protein">#FFB6B6</color>
+    <color name="fat">#FDFDAA</color>
+    <color name="lack">#A4E1BB</color>
+    <color name="fit">@color/resolve_acc</color>
+    <color name="over">#489064</color>
+    <color name="dish">#f1f1f1</color>
+    <color name="naverbtn">#03C75A</color>
+    <color name="kakaobtn">#FEE500</color>
+    <color name="emptycolor">#ffefef</color>
+    <color name="fullcolor">#f52a36</color>
+</resources>

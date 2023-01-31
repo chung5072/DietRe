@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_user"
+        android:name="com.ssafy.dietre.ui.user.UserFragment"
+        android:label="@string/title_user"
+        tools:layout="@layout/fragment_user" >
+        <action
+            android:id="@+id/action_navigation_user_to_navigation_week"
+            app:destination="@id/navigation_week" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.ssafy.dietre.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_calendar"
+            app:destination="@id/navigation_calendar" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_pick"
+            app:destination="@id/navigation_pick" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_user"
+            app:destination="@id/navigation_user"
+            tools:layout="@layout/fragment_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_calendar"
+        android:name="com.ssafy.dietre.ui.calendar.CalendarFragment"
+        android:label="@string/title_calendar"
+        tools:layout="@layout/fragment_calendar" >
+        <action
+            android:id="@+id/action_navigation_calendar_to_navigation_resolve"
+            app:destination="@id/navigation_resolve" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_pick"
+        android:name="com.ssafy.dietre.ui.pick.PickFragment"
+        android:label="@string/title_pick"
+        tools:layout="@layout/fragment_pick" >
+        <action
+            android:id="@+id/action_navigation_pick_to_navigation_fooddialog"
+            app:destination="@id/navigation_fooddialog" />
+        <action
+            android:id="@+id/action_navigation_pick_to_navigation_resolve"
+            app:destination="@id/navigation_resolve" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_week"
+        android:name="com.ssafy.dietre.ui.week.WeekFragment"
+        android:label="@string/title_week"
+        tools:layout="@layout/fragment_week"/>
+
+    <fragment
+        android:id="@+id/navigation_fooddialog"
+        android:name="com.ssafy.dietre.ui.pick.FooddialogFragment"
+        android:label="음식추가 dialog"
+        tools:layout="@layout/fragment_fooddialog" />
+    <fragment
+        android:id="@+id/navigation_resolve"
+        android:name="com.ssafy.dietre.ui.pick.ResolveFragment"
+        android:label="한끼분석"
+        tools:layout="@layout/fragment_resolve" />
+</navigation>

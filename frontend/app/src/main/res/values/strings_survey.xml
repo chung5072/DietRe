@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--설문조사 - 신체 정보-->
+    <!--제목-->
+    <string name="text_physic_title">나만의 정보를 입력하세요!!</string>
+    <!--설명-->
+    <string name="text_physic_desc">나만의 정보를 등록해보세요!!\n맞춤 영양 정보를 추천해드릴게요!!</string>
+    <!--설문 설명-->
+    <string name="text_physic_gender">성별</string>
+    <string name="text_physic_age">나이</string>
+    <string name="hint_physic_age">세</string>
+    <string name="text_physic_height">키</string>
+    <string name="hint_physic_height">cm</string>
+    <string name="text_physic_weight">몸무게</string>
+    <string name="hint_physic_weight">kg</string>
+    <string name="text_physic_input_desc">일의 자리까지</string>
+    <!--설문 입력값 및 선택 버튼-->
+    <string name="text_physic_male">남자</string>
+    <string name="text_physic_female">여자</string>
+    <!--페이지 이동 버튼-->
+    <string name="btn_physic_next">다음</string>
+
+    <!--설문조사 - 활동 정보-->
+    <!--제목-->
+    <string name="text_activity_title">평소 생활 패턴을 알려주세요!!</string>
+    <!--설명-->
+    <string name="text_activity_desc">평소 어떻게 생활하시나요? \n맞춤 영양 정보를 추천해드릴게요!!</string>
+    <!--설문 설명-->
+    <string name="text_activity_times">끼니 수</string>
+    <string name="text_activity_weekend">주말 포함</string>
+    <string name="text_activity_amount">활동량</string>
+    <string name="text_activity_goal">목표</string>
+    <!--설문 입력값 및 선택 버튼-->
+    <string name="btn_activity_two">2</string>
+    <string name="btn_activity_three">3</string>
+    <string name="btn_activity_yes">한다</string>
+    <string name="btn_activity_no">안 한다</string>
+    <string name="btn_activity_goal">목표</string>
+    <string name="text_activity_one">거의 없다</string>
+    <string name="text_activity_two">조금 있다</string>
+    <string name="text_activity_three">보통</string>
+    <string name="text_activity_four">꽤 있다</string>
+    <string name="text_activity_five">아주 많다</string>
+    <!--식단 관리 목표-->
+    <string name="goal_decre">감소</string>
+    <string name="goal_keep">유지</string>
+    <string name="goal_incre">증가</string>
+    <!--페이지 이동 버튼-->
+    <string name="btn_activity_prev">이전</string>
+    <string name="btn_activity_next">다음</string>
+
+    <!--설문조사 - 맞춤 영양 정보-->
+    <!--제목-->
+    <string name="text_nut_title">나에게 딱 맞는 영양 정보</string>
+    <!--설명-->
+    <string name="text_nut_desc">입력해주신 정보를 바탕으로 목표 칼로리와 목표 탄단지를 정해드렸어요!!\n
+    목표 칼로리는 변경하실 수 있습니다!!</string>
+    <!--설문 설명-->
+    <string name="text_nut_inner_title">맞춤 영양 정보</string>
+    <string name="text_nut_kcal">목표 칼로리</string>
+    <string name="hint_nut_kcal">kcal</string>
+    <string name="text_nut_tandanzi">탄단지 섭취 비율</string>
+    <string name="text_nut_carb">탄수화물</string>
+    <string name="text_nut_prot">단백질</string>
+    <string name="text_nut_fat">지방</string>
+    <!--설문 입력값 및 선택 버튼-->
+    <!--페이지 이동 버튼-->
+    <string name="btn_nut_prev">이전</string>
+    <string name="btn_nut_start">시작하기</string>
+</resources>

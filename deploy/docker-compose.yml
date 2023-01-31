@@ -1,0 +1,110 @@
+# docker-compose version
+version: "3.8"
+
+#container list
+services:
+  db:
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    volumes:
+      # Mount cotainer drive to real drive
+      - /home/ubuntu/dietre/db:/docker-entrypoint-initdb.d
+    networks:
+      # network inside of a container
+      - app-network
+    ports:
+      - "32000:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      TZ: "Asia/Seoul"
+    privileged: true
+  spring_backend:
+    image: backend:1
+    build:
+      context: ../backend
+    container_name: spring_backend
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      TZ: "Asia/Seoul"
+      # Spring application.properties DB
+      SPRING_DATASOURCE_URL: "jdbc:mysql://db:3306/dietre?userUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull&rewriteBatchedStatements=true"
+      server.address: 0.0.0.0
+      ACCESS-KEY: <ACCESS-KEY>
+      SECRET-KEY: <SECRET-KEY>
+    networks:
+      - app-network
+    depends_on:
+      - db
+  dietre_media:
+    build:
+      context: ../dietre-media
+    container_name: dietre_media
+    restart: always
+    ports:
+      - "9000:9000"
+    environment:
+      TZ: "Asia/Seoul"
+      server.address: 0.0.0.0
+    networks:
+      - app-network
+  python_backend:
+    build:
+      context: ../python/app
+      dockerfile: Dockerfile
+    container_name: python_backend
+    restart: always
+    ports:
+      - 9090:9090
+    environment:
+      TZ: "Asia/Seoul"
+      IMAGE_PREFIX: ${IMAGE_PREFIX}
+      IMAGE_UPLOAD_URL: ${IMAGE_UPLOAD_URL}
+    networks:
+      - app-network
+    depends_on:
+      - db
+  certbot:
+    depends_on:
+      - nginx
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - /home/ubuntu/dietre/certbot-etc:/etc/letsencrypt
+      - /home/ubuntu/dietre/dist:/var/www/html
+    command: renew
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /home/ubuntu/dietre/dist:/var/www/html
+      - /home/ubuntu/dietre/nginx-conf:/etc/nginx/conf.d
+      - /home/ubuntu/dietre/certbot-etc:/etc/letsencrypt
+  jenkins:
+    restart: always
+    image: jenkins/jenkins:lts
+    user: root
+    container_name: jenkins
+    ports:
+      - "8090:8080"
+      - "50000:50000"
+    volumes:
+      - /jenkins:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /home/ubuntu/dietre/secrets:/var/jenkins_home/secrets
+      - /home/ubuntu/dietre/images:/var/jenkins_home/images
+volumes:
+  certbot-etc:
+  dist:
+  nginx-conf:
+  secrets:
+  images:
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_user"
+    style="@style/DietRe_BaseLayout"
+    android:layout_gravity="center"
+    android:background="@color/main"
+    tools:context=".ui.user.UserFragment">
+    <!--마이페이지 제목-->
+    <TextView
+        style="@style/TextAppearance.DietRe.TitleLarge"
+        android:text="@string/title_user" />
+    <!--마이페이지 제목-->
+    <!--마이페이지 내용물-->
+    <androidx.core.widget.NestedScrollView
+        style="@style/DietRe_ContentLayout"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!--유저 회원 정보-->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.DietRe.BaseCardView"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="2"
+                android:padding="10dp"
+                app:cardBackgroundColor="@color/recommend_back">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/layout_user_social_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:weightSum="10">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="8"
+                                    android:orientation="horizontal">
+                                    <!--내용 - 이름-->
+                                    <TextView
+                                        android:id="@+id/text_user_social_name"
+                                        style="@style/TextAppearance.DietRe.TitleSmall"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="이름"
+                                        android:textSize="20sp"
+                                        android:textStyle="bold" />
+                                    <!--내용 - 이름-->
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:orientation="horizontal">
+                                    <!--정보 수정 및 수정 확인 버튼-->
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+                                        <!--정보 수정 버튼-->
+                                        <Button
+                                            android:id="@+id/btn_user_update"
+                                            style="?attr/materialIconButtonStyle"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="right"
+                                            android:visibility="visible"
+                                            app:icon="@drawable/ic_baseline_edit_24"
+                                            app:iconTint="@color/black" />
+                                        <!--정보 수정 버튼-->
+                                        <!--수정 확인 버튼-->
+                                        <Button
+                                            android:id="@+id/btn_user_confirm"
+                                            style="?attr/materialIconButtonStyle"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="right"
+                                            android:visibility="gone"
+                                            app:icon="@drawable/ic_baseline_check_box_24"
+                                            app:iconTint="@color/black" />
+                                        <!--수정 확인 버튼-->
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1">
+                                <!--내용 - 이메일-->
+                                <TextView
+                                    android:id="@+id/text_user_social_email"
+                                    style="@style/TextAppearance.DietRe.TitleSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="이메일"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+                                <!--내용 - 이메일-->
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!--개인 신체 정보-->
+                    <!--성별, 나이, 키, 몸무게-->
+                    <LinearLayout
+                        android:id="@+id/layout_user_physic_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/layout_user_physic_gender_age"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+                            <!--성별 textview하고 toggle button-->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/text_user_gender"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="성별"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    android:visibility="visible" />
+
+                                <com.google.android.material.button.MaterialButtonToggleGroup
+                                    android:id="@+id/btn_user_gender"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:visibility="gone"
+                                    app:singleSelection="true">
+                                    <!--남자-->
+                                    <Button
+                                        android:id="@+id/btn_user_male"
+                                        style="?attr/materialButtonOutlinedStyle"
+                                        android:layout_width="70dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/btn_user_male"
+                                        android:textSize="16sp" />
+                                    <!--남자-->
+                                    <!--여자-->
+                                    <Button
+                                        android:id="@+id/btn_user_female"
+                                        style="?attr/materialButtonOutlinedStyle"
+                                        android:layout_width="70dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/btn_user_female"
+                                        android:textSize="16sp" />
+                                    <!--여자-->
+                                </com.google.android.material.button.MaterialButtonToggleGroup>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+                                <!--나이 숫자 TextView + 세 하고 input text-->
+                                <TextView
+                                    android:id="@+id/text_user_age"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="@string/text_physic_age"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/textinput_user_age"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:hint="@string/text_physic_age"
+                                    android:visibility="gone"
+                                    app:boxStrokeColor="@color/recommend_acc"
+                                    app:hintTextColor="@color/recommend_acc"
+                                    app:suffixText="@string/hint_physic_age">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/edittext_user_age"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:inputType="number"
+                                        android:maxLength="3" />
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <!--키, 몸무게-->
+                        <LinearLayout
+                            android:id="@+id/layout_user_physic_height_weight"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+                            <!--키 textview + cm하고 input-->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/text_user_height"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="@string/text_physic_height"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    android:visibility="visible" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/textinput_user_height"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:hint="@string/text_physic_height"
+                                    android:visibility="gone"
+                                    app:boxStrokeColor="@color/recommend_acc"
+                                    app:hintTextColor="@color/recommend_acc"
+                                    app:suffixText="@string/hint_physic_height">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/edittext_user_height"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:inputType="number"
+                                        android:maxLength="3" />
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+                                <!--몸무게 숫자 TextView + 세 하고 input text-->
+                                <TextView
+                                    android:id="@+id/text_user_weight"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="@string/text_physic_weight"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    android:visibility="visible" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/textinput_user_weight"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:hint="@string/text_physic_weight"
+                                    android:visibility="gone"
+                                    app:boxStrokeColor="@color/recommend_acc"
+                                    app:hintTextColor="@color/recommend_acc"
+                                    app:suffixText="@string/hint_physic_weight">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/edittext_user_weight"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:inputType="number"
+                                        android:maxLength="3" />
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!--개인 신체 정보-->
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <!--소셜 프로필 및 개인 신체 정보-->
+            <!--식단 관리 목표-->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.DietRe.BaseCardView"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="3"
+                app:cardBackgroundColor="@color/resolve_back">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="6">
+                    <!--나의 목표와 버튼-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+                            <!--제목 - 식단관리목표-->
+                            <Button
+                                android:id="@+id/textbtn_user_activity"
+                                style="@style/Widget.Material3.Button.TextButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:text="@string/text_user_nut_activity"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                app:icon="@drawable/ic_baseline_edit_24"
+                                app:iconGravity="end"
+                                app:iconTint="@color/black" />
+                            <!--제목 - 식단관리목표-->
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+                            <!--버튼 - 식단관리목표-->
+                            <Button
+                                android:id="@+id/btn_user_activity"
+                                style="@style/ShapeAppearance.DietRe.toggleButton"
+                                android:layout_width="160dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:backgroundTint="@color/resolve_back"
+                                android:text="@string/goal_decre"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                            <!--버튼 - 식단관리목표-->
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+                            <!--제목 - 식단관리목표-->
+                            <Button
+                                android:id="@+id/textbtn_user_goal"
+                                style="@style/Widget.Material3.Button.TextButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:text="@string/text_user_nut_goal"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                app:icon="@drawable/ic_baseline_edit_24"
+                                app:iconGravity="end"
+                                app:iconTint="@color/black" />
+                            <!--제목 - 식단관리목표-->
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+                            <!--버튼 - 식단관리목표-->
+                            <Button
+                                android:id="@+id/btn_user_goal"
+                                style="@style/ShapeAppearance.DietRe.toggleButton"
+                                android:layout_width="160dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:backgroundTint="@color/resolve_back"
+                                android:text="@string/goal_decre"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                            <!--버튼 - 식단관리목표-->
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!--칼로리 값-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+                            <!--제목 - 목표 칼로리-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/text_user_kcal"
+                                android:textSize="20sp"
+                                tools:layout_gravity="center" />
+                            <!--제목 - 목표 칼로리-->
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+                            <!--내용 - 목표 칼로리-->
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/textinput_user_kcal"
+                                style="?attr/textInputFilledStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginHorizontal="10dp"
+                                app:boxBackgroundColor="@color/resolve_back"
+                                app:boxStrokeColor="@color/resolve_back"
+                                app:hintEnabled="false">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edittext_nut_kcal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:focusable="false"
+                                    android:focusableInTouchMode="false"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:maxLength="5"
+                                    android:text="2000"
+                                    android:textSize="30sp"
+                                    android:textStyle="bold" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                            <!--내용 - 목표 칼로리-->
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!--탄.단.지-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center">
+                                <!--제목 - 탄수화물-->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="@string/text_user_carb"
+                                    android:textSize="20sp" />
+                                <!--제목 - 탄수화물-->
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"
+                                android:gravity="center">
+                                <!--내용 - 탄수화물-->
+                                <TextView
+                                    android:id="@+id/text_user_carb"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="10dp"
+                                    android:text="300"
+                                    android:textSize="30sp"
+                                    android:textStyle="bold" />
+                                <!--내용 - 탄수화물-->
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center">
+                                <!--제목 - 단백질-->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="@string/text_user_prot"
+                                    android:textSize="20sp" />
+                                <!--제목 - 단백질-->
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"
+                                android:gravity="center">
+                                <!--내용 - 단백질-->
+                                <TextView
+                                    android:id="@+id/text_user_prot"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="10dp"
+                                    android:text="150"
+                                    android:textSize="30sp"
+                                    android:textStyle="bold" />
+                                <!--내용 - 단백질-->
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center">
+                                <!--제목 - 지방-->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="@string/text_user_fat"
+                                    android:textSize="20sp" />
+                                <!--제목 - 탄단지-->
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"
+                                android:gravity="center">
+                                <!--내용 - 지방-->
+                                <TextView
+                                    android:id="@+id/text_user_fat"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="10dp"
+                                    android:text="50"
+                                    android:textSize="30sp"
+                                    android:textStyle="bold" />
+                                <!--내용 - 지방-->
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!--이번 주 분석-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_user_week"
+                            style="@style/ShapeAppearance.DietRe.Button"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:text="@string/btn_user_week"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <!--식단 관리 목표-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/textbtn_user_withdrawal"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/btn_user_withdrawal"
+                    android:textColor="@color/danger" />
+
+                <Button
+                    android:id="@+id/textbtn_user_logout"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/btn_user_logout"
+                    android:textColor="@color/recommend_acc" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/goal_decre"
+        android:title="@string/goal_decre"/>
+    <item android:id="@+id/goal_keep"
+        android:title="@string/goal_keep"/>
+    <item android:id="@+id/goal_incre"
+        android:title="@string/goal_incre"/>
+</menu>

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/resolve_back"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".ui.pick.ResolveFragment">
+
+
+    <TextView
+        android:id="@+id/text_today"
+        style="@style/TextAppearance.DietRe.TitleLarge"
+        android:text="@string/title_today" />
+
+    <androidx.core.widget.NestedScrollView
+        style="@style/DietRe_ContentLayout"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/layout_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_meal"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:src="@drawable/title" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.DietRe.BaseCardView"
+                android:layout_width="match_parent"
+                android:layout_height="380dp"
+                android:layout_marginTop="20dp"
+                android:padding="10dp">
+
+                <LinearLayout style="@style/DietRe_CardLayout">
+
+                    <TextView
+                        android:id="@+id/text_menu"
+                        style="@style/TextAppearance.DietRe.TitleSmall"
+                        android:text="@string/title_menu" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/list_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="9"
+                        tools:listitem="@layout/food_list" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.DietRe.BaseCardView"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout style="@style/DietRe_CardLayout">
+
+                    <TextView
+                        android:id="@+id/text_oneresolve"
+                        style="@style/TextAppearance.DietRe.TitleSmall"
+                        android:text="@string/title_oneinfo" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="9"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:weightSum="10">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:orientation="vertical"
+                            android:weightSum="3">
+
+                            <TextView
+                                android:id="@+id/title_kcal"
+                                style="@style/TextAppearance.DietRe.Text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/title_kcal"
+                                android:textSize="16sp" />
+
+                            <com.github.mikephil.charting.charts.HorizontalBarChart
+                                android:id="@+id/kcal_bar"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="2">
+
+                            </com.github.mikephil.charting.charts.HorizontalBarChart>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="8"
+                            android:orientation="vertical"
+                            android:weightSum="10">
+
+                            <TextView
+                                android:id="@+id/title_cpf"
+                                style="@style/TextAppearance.DietRe.Text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/title_cpf"
+                                android:textSize="16sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/text_rcmd"
+                                    style="@style/TextAppearance.DietRe.Text"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/rcmd"
+                                    android:textSize="14sp" />
+
+                                <com.github.mikephil.charting.charts.HorizontalBarChart
+                                    android:id="@+id/rcmd_stackbar"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="8">
+
+                                </com.github.mikephil.charting.charts.HorizontalBarChart>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/text_real"
+                                    style="@style/TextAppearance.DietRe.Text"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/real"
+                                    android:textSize="14sp" />
+
+                                <com.github.mikephil.charting.charts.HorizontalBarChart
+                                    android:id="@+id/real_stackbar"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="8">
+
+                                </com.github.mikephil.charting.charts.HorizontalBarChart>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="5"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:weightSum="3">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="2"
+                                        android:gravity="bottom|center_horizontal"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/circle_carbo"
+                                            style="@style/DietRe_CircleText"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="50g" />
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:id="@+id/text_carbo"
+                                        style="@style/TextAppearance.DietRe.Text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/carbo"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:weightSum="3">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="2"
+                                        android:gravity="bottom|center_horizontal"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/circle_protein"
+                                            style="@style/DietRe_CircleText"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="20g" />
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:id="@+id/text_protein"
+                                        style="@style/TextAppearance.DietRe.Text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/protein"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:weightSum="3">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="2"
+                                        android:gravity="bottom|center_horizontal"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/circle_fat"
+                                            style="@style/DietRe_CircleText"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="30g" />
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:id="@+id/text_fat"
+                                        style="@style/TextAppearance.DietRe.Text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/fat"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

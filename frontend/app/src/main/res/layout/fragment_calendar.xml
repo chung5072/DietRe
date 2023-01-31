@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_calendar"
+    style="@style/DietRe_BaseLayout"
+    tools:context=".ui.calendar.CalendarFragment">
+    <!--페이지 제목-->
+    <TextView
+        android:id="@+id/title_calendar"
+        style="@style/TextAppearance.DietRe.TitleLarge"
+        android:text="@string/title_calendar" />
+    <!--페이지 제목-->
+
+    <!--bottom sheet가 올라오는 임시 범위 테두리-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!--달력-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="10"
+                android:orientation="vertical">
+                <!--헤더 - 월-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    android:weightSum="3">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/text_calendar_month"
+                            style="@style/TextAppearance.DietRe.TitleLarge"
+                            android:text="11월" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:padding="5dp">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/empty"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+                                <!--TODO 적게 먹은 날짜-->
+                                <TextView
+                                    android:id="@+id/text_calendar_lowcount"
+                                    style="@style/TextAppearance.DietRe.TitleSmall"
+                                    android:text="0" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:padding="5dp">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/full" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+                                <!--TODO 적절하게 먹은 날짜-->
+                                <TextView
+                                    android:id="@+id/text_calendar_propercount"
+                                    style="@style/TextAppearance.DietRe.TitleSmall"
+                                    android:text="0" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:padding="5dp">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/broken"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+                                <!--TODO 많이 먹은 날짜-->
+                                <TextView
+                                    android:id="@+id/text_calendar_toomuchcount"
+                                    style="@style/TextAppearance.DietRe.TitleSmall"
+                                    android:text="0" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!--여기는 바뀌는 값-->
+                </LinearLayout>
+                <!--헤더 - 월-->
+                <!--요일-->
+                <LinearLayout
+                    android:id="@+id/layout_calendar_dateview"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="8"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <!--요일 표시-->
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/text_dayofweek_sun"
+                            android:textAlignment="center"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/text_dayofweek_mon"
+                            android:textAlignment="center"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/text_dayofweek_tue"
+                            android:textAlignment="center"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/text_dayofweek_wed"
+                            android:textAlignment="center"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/text_dayofweek_thu"
+                            android:textAlignment="center"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/text_dayofweek_fri"
+                            android:textAlignment="center"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/text_dayofweek_sat"
+                            android:textAlignment="center"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <!--요일-->
+                    <!--달력뷰-->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycle_calendar_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                    <!--달력뷰-->
+                </LinearLayout>
+            </LinearLayout>
+            <!--달력-->
+            <!--bottom sheet-->
+            <!--bottom sheet 테두리-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="10">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"
+                    android:orientation="vertical">
+                    <!--달력 끝까지 안올라오게 제한-->
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical">
+                    <androidx.coordinatorlayout.widget.CoordinatorLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <FrameLayout
+                            android:id="@+id/layout_calendar_bottomsheet"
+                            style="@style/Widget.DietRe.BottomSheet"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:behavior_hideable="true"
+                            app:behavior_peekHeight="0dp"
+                            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                                <!--bottom sheet 손잡이-->
+                                <!--얘가 있어야 위가 안 짤렸던 것 같음-->
+                                <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                                <!--bottom sheet 손잡이-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:paddingHorizontal="10dp"
+                                    android:weightSum="10">
+                                    <!--하루 먹은 정보 제목-->
+                                    <TextView
+                                        android:id="@+id/title_haru"
+                                        style="@style/TextAppearance.DietRe.TitleSmall"
+                                        android:layout_gravity="center" />
+                                    <!--하루 먹은 정보 제목-->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:orientation="horizontal"
+                                        android:padding="10dp"
+                                        android:weightSum="10"
+                                        android:layout_weight="5">
+                                        <!--TODO 바뀌는 값-->
+                                        <androidx.coordinatorlayout.widget.CoordinatorLayout
+                                            android:id="@+id/layout_calendar_daily_content"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+                                            <LinearLayout
+                                                android:id="@+id/layout_calendar_daily_no_data"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:orientation="vertical"
+                                                android:visibility="gone">
+                                                <TextView
+                                                    style="@style/TextAppearance.DietRe.TitleSmall"
+                                                    android:text="입력된 식단 정보가 없습니다." />
+                                            </LinearLayout>
+                                            <LinearLayout
+                                                android:id="@+id/layout_calendar_daily_has_data"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:orientation="horizontal"
+                                                android:visibility="visible">
+                                                <!--파이 차트-->
+                                                <com.github.mikephil.charting.charts.PieChart
+                                                    android:id="@+id/day_pie"
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_weight="1">
+                                                    <!--파이 차트-->
+                                                </com.github.mikephil.charting.charts.PieChart>
+                                                <!--파이 차트-->
+                                                <!--실제 먹은 영양소 양-->
+                                                <LinearLayout
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_weight="1"
+                                                    android:gravity="center"
+                                                    android:orientation="vertical"
+                                                    android:paddingLeft="10dp">
+                                                    <!--TODO 바뀌는 값-->
+                                                    <TextView
+                                                        android:id="@+id/text_calendar_kcal"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_gravity="left"
+                                                        android:text="칼로리"
+                                                        android:textSize="18sp" />
+                                                    <!--TODO 바뀌는 값-->
+                                                    <TextView
+                                                        android:id="@+id/text_calendar_carb"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_gravity="left"
+                                                        android:text="탄수화물"
+                                                        android:textSize="18sp"
+                                                        android:drawableLeft="@drawable/carb_drawable_resize"
+                                                        android:drawableTint="@color/resolve_acc"
+                                                        android:drawablePadding="3dp"/>
+                                                    <!--TODO 바뀌는 값-->
+                                                    <TextView
+                                                        android:id="@+id/text_calendar_prot"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_gravity="left"
+                                                        android:text="단백질"
+                                                        android:textSize="18sp"
+                                                        android:drawableLeft="@drawable/prot_drawable_resize"
+                                                        android:drawableTint="@color/danger"
+                                                        android:drawablePadding="3dp"/>
+                                                    <!--TODO 바뀌는 값-->
+                                                    <TextView
+                                                        android:id="@+id/text_calendar_fat"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_gravity="left"
+                                                        android:text="지방"
+                                                        android:textSize="18sp"
+                                                        android:drawableLeft="@drawable/fat_drawable_resize"
+                                                        android:drawableTint="@color/recommend_acc"
+                                                        android:drawablePadding="3dp"/>
+                                                    <!--바뀌는 값-->
+                                                </LinearLayout>
+                                                <!--실제 먹은 영양소 양-->
+                                            </LinearLayout>
+                                        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:id="@+id/layout_calendar_daily_btns"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="4"
+                                        android:orientation="horizontal"
+                                        android:gravity="center"
+                                        android:weightSum="3">
+                                        <androidx.coordinatorlayout.widget.CoordinatorLayout
+                                            android:id="@+id/layout_calendar_breakfast"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:layout_marginRight="5dp">
+                                            <ImageView
+                                                android:id="@+id/img_calendar_breakfast"
+                                                android:layout_width="100dp"
+                                                android:layout_height="100dp"
+                                                android:layout_gravity="center"/>
+                                            <TextView
+                                                android:id="@+id/text_calendar_breakfast"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textStyle="bold"
+                                                android:textSize="20sp"
+                                                android:layout_gravity="center"
+                                                android:text="@string/breakfast"/>
+                                        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+                                        <androidx.coordinatorlayout.widget.CoordinatorLayout
+                                            android:id="@+id/layout_calendar_lunch"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:layout_marginHorizontal="5dp">
+                                            <ImageView
+                                                android:id="@+id/img_calendar_lunch"
+                                                android:layout_width="100dp"
+                                                android:layout_height="100dp"
+                                                android:layout_gravity="center"/>
+                                            <TextView
+                                                android:id="@+id/circle_calendar_lunch"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textStyle="bold"
+                                                android:textSize="20sp"
+                                                android:layout_gravity="center"
+                                                android:text="@string/lunch"/>
+                                        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+                                        <androidx.coordinatorlayout.widget.CoordinatorLayout
+                                            android:id="@+id/layout_calendar_dinner"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:layout_marginLeft="5dp">
+                                            <ImageView
+                                                android:id="@+id/img_calendar_dinner"
+                                                android:layout_width="100dp"
+                                                android:layout_height="100dp"
+                                                android:layout_gravity="center"/>
+                                            <TextView
+                                                android:id="@+id/text_calendar_dinner"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textStyle="bold"
+                                                android:textSize="20sp"
+                                                android:layout_gravity="center"
+                                                android:text="@string/dinner" />
+                                        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </FrameLayout>
+                        <!--bottom sheet 테두리-->
+                    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!--bottom sheet-->
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </LinearLayout>
+    <!--bottom sheet가 올라오는 임시 범위 테두리-->
+</LinearLayout>

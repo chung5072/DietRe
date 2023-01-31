@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_pick"
+    style="@style/DietRe_BaseLayout"
+    android:background="@color/recommend_back"
+    tools:context=".ui.pick.PickFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/TextAppearance.DietRe.TitleLarge"
+        android:text="@string/title_pick" />
+
+    <LinearLayout
+        style="@style/DietRe_ContentLayout"
+        android:weightSum="10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/btn_datepick"
+                style="@style/ShapeAppearance.DietRe.toggleButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:text="날짜선택" />
+
+            <Button
+                android:id="@+id/btn_meal"
+                style="@style/ShapeAppearance.DietRe.toggleButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/meal_menu" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_pic"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="4"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_pic"
+                style="@style/ShapeAppearance.DietRe.picButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/text_takepic" />
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.DietRe.BaseCardView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:weightSum="10">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:id="@+id/title_pickmeal"
+                        style="@style/TextAppearance.DietRe.TitleSmall"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:text="@string/title_pickmeal" />
+
+                    <Button
+                        android:id="@+id/btn_addfood"
+                        style="@style/ShapeAppearance.DietRe.Button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="3"
+                        android:backgroundTint="@color/recommend"
+                        android:text="음식 추가" />
+
+                    <Button
+                        android:id="@+id/btn_picksave"
+                        style="@style/ShapeAppearance.DietRe.Button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="식단 저장" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/list_food"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="8"
+                    tools:listitem="@layout/food_list" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</LinearLayout>

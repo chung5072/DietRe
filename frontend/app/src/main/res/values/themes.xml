@@ -1,0 +1,289 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.DietRe" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/resolve</item>
+        <item name="colorPrimaryVariant">@color/resolve_acc</item>
+        <item name="colorOnPrimary">@color/main</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/recommend</item>
+        <item name="colorSecondaryVariant">@color/recommend_acc</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <!-- <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item> -->
+        <item name="android:statusBarColor">@color/status</item>
+
+        <!-- Customize your theme here. -->
+        <item name="android:textColorPrimary">@color/textPrimary</item>
+        <item name="android:buttonStyle">@color/status</item>
+        <!-- 코너 round -->
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Large</item>
+
+    </style>
+
+    <!-- 제목, 글자 -->
+    <style name="TextAppearance.DietRe.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="TextAppearance.DietRe.TitleSmall" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="TextAppearance.DietRe.Text" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="DietRe_CircleText">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/circle_text</item>
+    </style>
+
+    <style name="TextAppearance.DietRe.FoodTitle" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.DietRe.FoodText" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="DietRe.TableTitle" parent="MaterialAlertDialog.Material3.Body.Text">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@color/resolve</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:padding">3dp</item>
+    </style>
+
+    <style name="DietRe.Score" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DietRe.Percent" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/textPrimary</item>
+    </style>
+
+    <!-- 레이아웃 -->
+    <style name="DietRe_BaseLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:weightSum">10</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="DietRe_CardLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:weightSum">10</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="DietRe_ContentLayout">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_weight">9</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="DietRe_InfoLayout.Base">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:weightSum">10</item>
+    </style>
+
+    <style name="DietRe_InfoLayout">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">8</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <!-- 하단 시트 -->
+    <style name="Widget.DietRe.BottomSheet" parent="Widget.Material3.BottomSheet">
+        <item name="backgroundTint">@color/resolve_back</item>
+        <item name="cornerSize">30dp</item>
+        <item name="elevation">400dp</item>
+    </style>
+
+    <!-- 카드 뷰(칸) -->
+    <style name="Widget.DietRe.BaseCardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Large</item>
+    </style>
+
+    <style name="Widget.DietRe.SmallCardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.ExtraLarge</item>
+    </style>
+
+    <style name="Widget.DietRe.FoodCardView" parent="Widget.Material3.CardView.Filled">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">vertical</item>
+        <item name="cardBackgroundColor">@color/main</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Large</item>
+    </style>
+
+    <style name="DietRe.Calendar" parent="ThemeOverlay.Material3.MaterialCalendar">
+        <item name="colorPrimary">@color/recommend_acc</item>
+        <item name="colorOnPrimary">@color/main</item>
+    </style>
+    <!--달력 spinner 스타일-->
+    <style name="DietReCalendarSpinner" parent="ThemeOverlay.Material3.Dialog">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="colorSurface">@color/recommend_back</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Large</item>
+        <!-- !Important! Add this to force the use of the Spinner mode -->
+        <item name="android:datePickerStyle">@style/MySpinnerDatePicker</item>
+    </style>
+    <style name="MySpinnerDatePicker" parent="android:Widget.Material.DatePicker">
+        <item name="android:datePickerMode">spinner</item>
+    </style>
+
+    <style name="DietRe.BottomNavBar" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/status</item>
+    </style>
+
+    <!-- 버튼 -->
+    <style name="ShapeAppearance.DietRe.Button" parent="ShapeAppearanceOverlay.Material3.Button">
+        <item name="android:padding">5dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.ExtraLarge</item>
+        <item name="android:textColor">@color/textPrimary</item>
+    </style>
+
+    <style name="ShapeAppearance.DietRe.picButton" parent="ShapeAppearanceOverlay.Material3.Button">
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Small</item>
+    </style>
+
+    <style name="ShapeAppearance.DietRe.xButton" parent="Widget.Material3.Button.TextButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:text">X</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textColor">@color/textGray</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Small</item>
+    </style>
+
+    <style name="ShapeAppearance.DietRe.toggleButton" parent="ShapeAppearanceOverlay.Material3.Button">
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="backgroundTint">@color/back_gray</item>
+        <item name="colorSurface">@color/main</item>
+        <item name="colorOnSurface">@color/recommend_acc</item>
+    </style>
+
+    <!-- 스피너 -->
+    <style name="DietRe.Popup" parent="Widget.Material3.PopupMenu">
+        <item name="colorSurface">@color/main</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Large</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:radius">4dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <!-- 이미지뷰 -->
+    <style name="CircleImageView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="civ_circle_background_color">@color/white</item>
+        <item name="civ_border_color">@color/recommend_acc</item>
+        <item name="civ_border_overlay">false</item>
+        <item name="civ_border_width">1dp</item>
+        <item name="android:src">@drawable/logo</item>
+    </style>
+
+    <!-- 검색 editText -->
+    <style name="DietRe.FoodAddInput" parent="Widget.Material3.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Large</item>
+        <item name="startIconDrawable">@drawable/ic_search_24</item>
+        <item name="startIconTint">@color/recommend_acc</item>
+        <item name="endIconMode">clear_text</item>
+        <item name="android:textColorHint">@color/main_dark</item>
+        <item name="hintTextColor">@color/recommend_acc</item>
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="hintAnimationEnabled">false</item>
+        <item name="boxStrokeColor">@color/recommend_acc</item>
+        <item name="errorEnabled">true</item>
+    </style>
+
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/resolve_acc</item>
+    </style>
+
+    <!--slider에 나타나는 텍스트 바탕 색상-->
+    <style name="Widget.App.Slider" parent="Widget.Material3.Slider">
+        <item name="labelStyle">@style/Widget.App.Tooltip</item>
+    </style>
+
+    <style name="Widget.App.Tooltip" parent="Widget.Material3.Tooltip">
+        <item name="android:textAppearance">@style/TextAppearance.App.Tooltip</item>
+        <item name="backgroundTint">@color/status</item>
+    </style>
+
+    <style name="TextAppearance.App.Tooltip" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--다이얼로그에 사용하는 버튼 색상-->
+    <style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+    </style>
+
+    <style name="NeutralButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/danger</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/resolve_acc</item>
+    </style>
+</resources>

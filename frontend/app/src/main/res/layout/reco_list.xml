@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_reco_item"
+    style="@style/DietRe_InfoLayout.Base"
+    android:layout_marginBottom="5dp"
+    android:orientation="horizontal">
+
+    <LinearLayout style="@style/DietRe_InfoLayout">
+        <TextView
+            android:id="@+id/text_reco_name"
+            style="@style/TextAppearance.DietRe.FoodTitle"
+            android:text="밥 | 100kcal" />
+        <TextView
+            android:id="@+id/text_reco_info"
+            style="@style/TextAppearance.DietRe.FoodText"
+            android:text="탄수화물(g) 999, 단백질(g) 999, 지방(g) 999" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_reco_amount"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="right|center_vertical"
+        android:text="1"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+</LinearLayout>

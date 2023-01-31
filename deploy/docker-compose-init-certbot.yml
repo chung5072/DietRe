@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+    certbot:
+        depends_on:
+            - nginx
+        image: certbot/certbot
+        volumes:
+            - /home/ubuntu/dietre/certbot-etc:/etc/letsencrypt
+            - /home/ubuntu/dietre/dist/:/var/www/html
+        command: certonly --webroot --webroot-path=/var/www/html --email djg4053@gmail.com --agree-tos --no-eff-email --staging -d k7a105.p.ssafy.io
+
+    nginx:
+        image: nginx:alpine
+        restart: unless-stopped
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - /home/ubuntu/dietre/dist:/var/www/html
+            - /home/ubuntu/dietre/nginx-conf:/etc/nginx/conf.d
+            - /home/ubuntu/dietre/certbot-etc:/etc/letsencrypt
+        networks:
+            - app-network
+
+volumes:
+    certbot-etc:
+    dist:
+    nginx-conf:
+
+networks:
+    app-network:
+        driver: bridge

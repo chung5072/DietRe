@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--요일 표시-->
+    <string name="text_dayofweek_sun">일</string>
+    <string name="text_dayofweek_mon">월</string>
+    <string name="text_dayofweek_tue">화</string>
+    <string name="text_dayofweek_wed">수</string>
+    <string name="text_dayofweek_thu">목</string>
+    <string name="text_dayofweek_fri">금</string>
+    <string name="text_dayofweek_sat">토</string>
+    <!--달성률-->
+    <string name="text_calendar_rate">이번 달 달성률: </string>
+</resources>

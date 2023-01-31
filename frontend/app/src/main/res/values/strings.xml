@@ -1,0 +1,58 @@
+<resources>
+    <!-- 제목 -->
+    <string name="app_name">DietRe</string>
+    <string name="title_home">다이어리</string>
+    <string name="title_calendar">식단기록</string>
+    <string name="title_haru">하루분석</string>
+    <string name="title_pick">식단입력</string>
+    <string name="title_pickmeal">인식된 음식</string>
+    <string name="title_fooddialg">음식 추가하기</string>
+    <string name="title_today">한끼 분석</string>
+    <string name="title_oneinfo">영양 섭취 요약</string>
+    <string name="title_kcal">칼로리</string>
+    <string name="title_cpf">탄단지량</string>
+    <string name="title_menu">메뉴</string>
+    <string name="title_user">마이페이지</string>
+    <string name="title_rcmd">내 취향 식단</string>
+    <string name="title_start">식단 AtoZ, 다이어리</string>
+    <string name="title_week">지난주 분석</string>
+    <string name="title_recolist">추천 음식 리스트</string>
+
+    <!-- 로그인 -->
+    <string name="login_description">간편하게 시작하기</string>
+    <string name="login_google">Google 계정으로 로그인</string>
+    <string name="login_kakao">Kakao 계정으로 로그인</string>
+    <string name="login_naver">Naver 계정으로 로그인</string>
+
+    <!-- 설명 -->
+    <string name="text_takepic">+ 사진을 넣어 식단을 기록하세요.</string>
+    <string name="text_up10">😊 당신은 프로 다이어리 사용자!\n다음주에도 이대로만 가보자고💪</string>
+    <string name="text_up30">😃 식단을 잘 지켰어요!\n다음주에는 조금 더 잘 지켜볼까요?</string>
+    <string name="text_up50">🙂 조금 더 열심히 사용해봅시다\n다음주에는 좀 더 높은 순위로 가보자고</string>
+    <string name="text_up100">😥 사용자의 입력으로 완성되는 다이어리\n다음주에는 열심히 기록해봐요!</string>
+    <!-- 식사 종류 메뉴 -->
+    <string name="meal_menu">시간</string>
+    <string name="breakfast">아침</string>
+    <string name="lunch">점심</string>
+    <string name="dinner">저녁</string>
+    <!--식판 / 단품-->
+    <string name="diet_kind">식단</string>
+    <string name="tray">식판</string>
+    <string name="single">단품</string>
+    <!--식단 버튼 힌트 - 목표-->
+    <string name="diet_goal">목표</string>
+    <!-- 영양 정보 -->
+    <string name="rcmd">추천</string>
+    <string name="real">섭취</string>
+    <string name="kcal">칼로리</string>
+    <string name="carbo">탄수화물</string>
+    <string name="protein">단백질</string>
+    <string name="fat">지방</string>
+    <string name="text_nutchart">영양현황</string>
+    <!-- 일주일 분석 -->
+    <string name="table_title">일별 분석</string>
+    <string name="loading_menu">메뉴를 분석 중입니다.</string>
+    <string name="loading_resolve">식단을 불러오고 있습니다.</string>
+    <string name="loading_recommend">맞춤 식단을 추천 중입니다.</string>
+
+</resources>
